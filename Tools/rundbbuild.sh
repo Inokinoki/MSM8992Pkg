@@ -5,7 +5,7 @@ RECONFIG=FALSE
 DEVBUILD=FALSE
 CIBUILD=FALSE
 DB820C=FALSE
-LUMIA950XL=FALSE
+MSM8992=FALSE
 
 function HelpMsg()
 {
@@ -21,7 +21,7 @@ function HelpMsg()
   echo
   echo "  --820c, -820c         Run build for Dragonboard 820c."
   echo
-  echo "  --950xl, -950xl       Run build for Lumia 950 XL."
+  echo "  --bullhead, -bullhead       Run build for LGE Nexus 5X Bullhead."
   echo
   echo "  --production, -ci     Run CI build (clean)."
   echo
@@ -105,7 +105,7 @@ function DevelopmentBuild()
 {
   if [ "$DB820C" = TRUE ]; then
     ./Dragonboard820cPkg/Tools/edk2-build.ps1
-  elif [ "$LUMIA950XL" = TRUE ]; then
+  elif [ "$MSM8992" = TRUE ]; then
     ./Lumia950XLPkg/Tools/edk2-build.ps1
   else
     ./DragonboardPkg/Tools/edk2-build.ps1
@@ -122,7 +122,7 @@ function CIBuild()
 {
   if [ "$DB820C" = TRUE ]; then
     ./Dragonboard820cPkg/Tools/edk2-build.ps1 -Clean
-  elif [ "$LUMIA950XL" = TRUE ]; then
+  elif [ "$MSM8992" = TRUE ]; then
     ./Lumia950XLPkg/Tools/edk2-build.ps1 -Clean
   else
     ./DragonboardPkg/Tools/edk2-build.ps1 -Clean
@@ -167,10 +167,10 @@ do
       DB820C=TRUE
       shift
     ;;
-    --950xl|-950xl)
-      # 950XL build
-      echo "[Builder] Run Lumia 950 / Lumia 950 XL Build."
-      LUMIA950XL=TRUE
+    --bullhead|-bullhead)
+      # bullhead build
+      echo "[Builder] Run LGE Nexus 5X Build."
+      MSM8992=TRUE
       shift
     ;;
     -?|-h|--help|*)

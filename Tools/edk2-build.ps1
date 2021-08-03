@@ -18,18 +18,18 @@ Write-Host "Task: EDK2 build"
 
 # Targets. Ensure corresponding DSC/FDF files exist
 # Build all targets on VSTS (phasing out Travis right now) or if user asks to do so
-if ($null -ne $env:BUILDALL) {
-    Write-Output "User requested build all available targets."
-    $availableTargets = @(
-        "Lumia950",
-        "Lumia950XL"
-    )
-}
-else {
-    $availableTargets = @(
-        "Lumia950XL"
-    )
-}
+# if ($null -ne $env:BUILDALL) {
+#     Write-Output "User requested build all available targets."
+#     $availableTargets = @(
+#         "Lumia950",
+#         "Lumia950XL"
+#     )
+# }
+# else {
+$availableTargets = @(
+    "Bullhead"
+)
+# }
 
 # Check package path.
 if ($null -eq (Test-Path -Path "Lumia950XLPkg")) {

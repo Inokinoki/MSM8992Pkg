@@ -478,6 +478,14 @@
   VariablePolicyLib|MdeModulePkg/Library/VariablePolicyLib/VariablePolicyLibRuntimeDxe.inf
 
 [Components.common]
+  MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf
+  MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
+  EmbeddedPkg/Drivers/AndroidFastbootTransportUsbDxe/FastbootTransportUsbDxe.inf
+  EmbeddedPkg/Application/AndroidFastboot/AndroidFastbootApp.inf
+
+  # ArmPlatformPkg/PrePi/PeiUniCore.inf
+  # ArmPlatformPkg/PrePi/PeiUniCore.inf
+
   # PrePI
   Lumia950XLPkg/PrePi/PrePi.inf {
     <LibraryClasses>
